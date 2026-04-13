@@ -1,19 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { StoreHeader } from "@/components/StoreHeader";
+import { HeroSection } from "@/components/HeroSection";
+import { ProductGrid } from "@/components/ProductGrid";
+import { StoreFooter } from "@/components/StoreFooter";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Tabletop Purse Pal — Foldable Purse Holder" },
+      { name: "description", content: "Elegant foldable purse holders for your table. Keep your handbag safe, clean, and within reach." },
+      { property: "og:title", content: "Tabletop Purse Pal — Foldable Purse Holder" },
+      { property: "og:description", content: "Elegant foldable purse holders for your table." },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <>
+      <StoreHeader />
+      <HeroSection />
+      <ProductGrid />
+      <StoreFooter />
+    </>
+  );
 }
