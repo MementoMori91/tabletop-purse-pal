@@ -5,8 +5,9 @@ export function StoreHeader() {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-serif text-xl tracking-wide text-foreground">
-          Tabletop Purse Pal
+        <Link to="/" className="flex flex-col leading-none">
+          <span className="font-serif text-xl tracking-wide text-foreground">Hängr</span>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-accent mt-0.5">Nordic Luxury</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm tracking-widest uppercase text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">Shop</Link>
