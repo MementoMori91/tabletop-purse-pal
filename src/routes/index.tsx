@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { StoreHeader } from "@/components/StoreHeader";
+import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { HeroSection } from "@/components/HeroSection";
+import { USPStrip } from "@/components/USPStrip";
 import { ProductGrid } from "@/components/ProductGrid";
+import { FounderStory } from "@/components/FounderStory";
 import { StoreFooter } from "@/components/StoreFooter";
 
 export const Route = createFileRoute("/")({
@@ -19,9 +22,12 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
+      <AnnouncementBar />
       <StoreHeader />
       <HeroSection />
+      <USPStrip />
       <ProductGrid />
+      <FounderStory />
       <StoreFooter />
     </>
   );
