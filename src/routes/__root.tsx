@@ -26,8 +26,8 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tabletop Purse Pal" },
-      { name: "description", content: "Elegant foldable purse holders for your table" },
+      { title: "Hängr — Nordic Luxury" },
+      { name: "description", content: "Scandinavian-designed foldable purse holders" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

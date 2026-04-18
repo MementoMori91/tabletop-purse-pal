@@ -26,8 +26,8 @@ export function ProductGrid() {
   return (
     <section id="products" className="max-w-7xl mx-auto px-6 py-20">
       <div className="text-center mb-14">
-        <h2 className="text-3xl md:text-4xl font-serif text-foreground">Our Collection</h2>
-        <p className="mt-3 text-muted-foreground">Handcrafted accessories for the modern lifestyle</p>
+        <h2 className="text-3xl md:text-4xl font-serif text-foreground">The Collection</h2>
+        <p className="mt-3 text-muted-foreground">Scandinavian craft, made for everyday carry</p>
       </div>
 
       {loading ? (

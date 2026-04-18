@@ -6,13 +6,13 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 min-h-[70vh]">
         <div className="flex flex-col justify-center px-6 md:px-12 py-16 md:py-24">
           <p className="text-sm tracking-[0.3em] uppercase text-accent mb-4 animate-fade-in-up">
-            Elegance Meets Function
+            Nordic Luxury
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-tight animate-fade-in-up-delay">
-            The Foldable Purse Holder
+            Hängr — quiet craft for everyday carry
           </h1>
           <p className="mt-6 text-muted-foreground text-lg leading-relaxed max-w-md animate-fade-in-up-delay-2">
-            Keep your handbag safe, clean, and within reach. Our elegant table hook folds flat for effortless portability.
+            A foldable purse holder shaped by Scandinavian design. Minimal, refined, and made to keep your bag off the floor wherever you go.
           </p>
           <div className="mt-8 animate-fade-in-up-delay-2">
             <a
