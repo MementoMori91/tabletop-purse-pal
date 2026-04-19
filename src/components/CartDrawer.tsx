@@ -2,14 +2,18 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { ShoppingBag, Minus, Plus, Trash2, ExternalLink, Loader2 } from "lucide-react";
+import { ShoppingBag, Minus, Plus, Trash2, ExternalLink, Loader2, Check } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { FREE_SHIPPING_THRESHOLD } from "./AnnouncementBar";
 
 export function CartDrawer() {
   const [isOpen, setIsOpen] = useState(false);
   const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
+  const remainingForFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - totalPrice);
+  const shippingProgress = Math.min(100, (totalPrice / FREE_SHIPPING_THRESHOLD) * 100);
+  const hasFreeShipping = totalPrice >= FREE_SHIPPING_THRESHOLD;
 
   useEffect(() => { if (isOpen) syncCart(); }, [isOpen, syncCart]);
 
@@ -64,7 +68,7 @@ export function CartDrawer() {
                         {item.selectedOptions.length > 0 && item.variantTitle !== "Default Title" && (
                           <p className="text-xs text-muted-foreground">{item.selectedOptions.map(o => o.value).join(' · ')}</p>
                         )}
-                        <p className="text-sm font-medium mt-1">{item.price.currencyCode} {parseFloat(item.price.amount).toFixed(2)}</p>
+                        <p className="text-sm font-medium mt-1">€{parseFloat(item.price.amount).toFixed(0)}</p>
                       </div>
                       <div className="flex flex-col items-end gap-2 flex-shrink-0">
                         <button onClick={() => removeItem(item.variantId)} className="text-muted-foreground hover:text-destructive transition-colors">
@@ -85,9 +89,27 @@ export function CartDrawer() {
                 </div>
               </div>
               <div className="flex-shrink-0 space-y-4 pt-4 border-t">
+                <div className="space-y-2">
+                  {hasFreeShipping ? (
+                    <div className="flex items-center gap-2 text-xs text-accent">
+                      <Check className="h-3.5 w-3.5" />
+                      <span className="tracking-wide uppercase">You've unlocked free shipping</span>
+                    </div>
+                  ) : (
+                    <p className="text-xs text-muted-foreground tracking-wide">
+                      You're <span className="text-foreground font-medium">€{remainingForFreeShipping.toFixed(0)}</span> away from free shipping
+                    </p>
+                  )}
+                  <div className="h-1 w-full bg-cream-dark rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-accent transition-all duration-500"
+                      style={{ width: `${shippingProgress}%` }}
+                    />
+                  </div>
+                </div>
                 <div className="flex justify-between items-center">
                   <span className="font-serif text-lg">Total</span>
-                  <span className="text-lg font-medium">{items[0]?.price.currencyCode} {totalPrice.toFixed(2)}</span>
+                  <span className="text-lg font-medium">€{totalPrice.toFixed(2)}</span>
                 </div>
                 <Button onClick={handleCheckout} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm" size="lg" disabled={items.length === 0 || isLoading || isSyncing}>
                   {isLoading || isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <><ExternalLink className="w-4 h-4 mr-2" />Checkout</>}
