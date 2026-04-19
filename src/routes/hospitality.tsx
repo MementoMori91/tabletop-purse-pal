@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { Check, Mail, Phone, Building2, Sparkles, ShieldCheck, Truck, Shield, Pen, RotateCcw, CreditCard } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/hospitality")({
   component: HospitalityPage,
@@ -279,6 +280,49 @@ function HospitalityPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-t border-border">
+        <div className="max-w-3xl mx-auto px-6 py-20">
+          <div className="text-center mb-10">
+            <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">FAQ</p>
+            <h2 className="text-3xl md:text-4xl font-serif">Common questions</h2>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {[
+              {
+                q: "What format do I need for my logo?",
+                a: "We accept SVG, EPS, or high-resolution PNG. Our team will prepare the engraving file and send you a proof before production.",
+              },
+              {
+                q: "What is the minimum order quantity?",
+                a: "You can order from 50 units. Engraving is included from 100 units. For a no-commitment trial, request a free sample first.",
+              },
+              {
+                q: "How long does delivery take?",
+                a: "Samples ship within 7 days. Bulk orders have a 3–4 week lead time from order confirmation.",
+              },
+              {
+                q: "Do you ship outside the EU?",
+                a: "Currently we ship EU-wide. For international enquiries, contact us at hospitality@hangr.com.",
+              },
+              {
+                q: "Can we re-order?",
+                a: "Yes. All venues get access to a re-order portal so managers can place repeat orders without going through setup again.",
+              },
+            ].map(({ q, a }, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="border-border">
+                <AccordionTrigger className="text-left font-serif text-lg hover:no-underline">
+                  {q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
