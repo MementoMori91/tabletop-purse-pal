@@ -293,15 +293,23 @@ function HospitalityPage() {
 
       {/* Minimal footer */}
       <footer className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-[0.2em] uppercase text-muted-foreground">
-          <p>© {new Date().getFullYear()} Hängr Nordic — Hospitality</p>
-          <div className="flex gap-6">
+        <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center md:items-start justify-between gap-4 text-xs tracking-[0.2em] uppercase text-muted-foreground">
+          <div className="text-center md:text-left">
+            <p>© {new Date().getFullYear()} Hängr Nordic — Hospitality</p>
+            <p className="mt-2 normal-case tracking-normal italic text-muted-foreground/80">
+              Elevating the guest experience, one detail at a time.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-6">
             <Link to="/" className="hover:text-foreground transition-colors">
               Consumer site
             </Link>
             <a href="mailto:hospitality@hangr.com" className="hover:text-foreground transition-colors">
               hospitality@hangr.com
             </a>
+            <Link to="/" className="hover:text-foreground transition-colors">
+              Privacy Policy
+            </Link>
           </div>
         </div>
       </footer>
