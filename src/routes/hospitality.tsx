@@ -80,6 +80,9 @@ function HospitalityPage() {
             </span>
           </Link>
           <nav className="flex items-center gap-6 text-xs tracking-[0.2em] uppercase text-muted-foreground">
+            <a href="#how-it-works" className="hover:text-foreground transition-colors hidden sm:inline">
+              How it works
+            </a>
             <a href="#pricing" className="hover:text-foreground transition-colors hidden sm:inline">
               Pricing
             </a>
