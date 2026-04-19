@@ -26,10 +26,40 @@ export const Route = createFileRoute("/hospitality")({
 });
 
 const tiers = [
-  { qty: "50", price: "22", note: "Sample order", subnote: "Hooks only — no engraving" },
-  { qty: "100", price: "18", note: "Most popular", highlight: true },
-  { qty: "250", price: "15", note: "Group / chain" },
-  { qty: "500+", price: "12", note: "Enterprise" },
+  {
+    qty: "50",
+    price: "25",
+    badge: "Sample",
+    features: ["Logo sticker available", "+€15 shipping", "2-week lead time"],
+    checks: [false, false, false],
+  },
+  {
+    qty: "100",
+    price: "19",
+    badge: "Most popular",
+    highlight: true,
+    features: ["Custom logo engraving", "Gift-ready packaging", "Free delivery EU"],
+    checks: [true, true, true],
+  },
+  {
+    qty: "250",
+    price: "16",
+    badge: "Group / Chain",
+    features: ["Custom logo engraving", "Free delivery EU", "Priority support"],
+    checks: [true, true, true],
+  },
+  {
+    qty: "500+",
+    price: "13",
+    badge: "Enterprise",
+    features: [
+      "Custom logo engraving",
+      "Free delivery EU",
+      "Dedicated account manager",
+      "Branded training materials",
+    ],
+    checks: [true, true, true, true],
+  },
 ];
 
 const inquirySchema = z.object({
@@ -219,39 +249,104 @@ function HospitalityPage() {
             {tiers.map((t) => (
               <div
                 key={t.qty}
-                className={`bg-background rounded-sm p-8 text-center border ${
-                  t.highlight ? "border-foreground shadow-sm" : "border-border"
+                className={`group rounded-lg p-8 flex flex-col border bg-background transition-all hover:-translate-y-0.5 ${
+                  t.highlight
+                    ? "border-foreground shadow-md"
+                    : "border-border hover:border-foreground/40"
                 }`}
               >
                 <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
                   {t.qty} units
                 </p>
-                <p className="font-serif text-4xl mt-4">€{t.price}</p>
+                <p className="font-serif text-5xl mt-4">€{t.price}</p>
                 <p className="text-xs text-muted-foreground mt-1">per unit</p>
-                <p
-                  className={`mt-6 text-xs tracking-[0.2em] uppercase ${
-                    t.highlight ? "text-accent" : "text-muted-foreground"
+                <span
+                  className={`inline-block self-start mt-5 px-2.5 py-1 text-[10px] tracking-[0.2em] uppercase rounded-sm ${
+                    t.highlight
+                      ? "bg-accent text-accent-foreground"
+                      : "bg-cream text-muted-foreground border border-border"
                   }`}
                 >
-                  {t.note}
-                </p>
-                {t.subnote && (
-                  <p className="mt-2 text-[10px] normal-case tracking-normal text-muted-foreground/70 italic">
-                    {t.subnote}
-                  </p>
-                )}
+                  {t.badge}
+                </span>
+                <ul className="mt-6 space-y-2.5 text-sm text-foreground/80 flex-1">
+                  {t.features.map((f, i) => (
+                    <li key={f} className="flex items-start gap-2">
+                      {t.checks[i] ? (
+                        <Check className="h-4 w-4 text-accent mt-0.5 shrink-0" />
+                      ) : (
+                        <span className="h-4 w-4 mt-0.5 shrink-0 text-muted-foreground/60 text-center leading-4">
+                          ·
+                        </span>
+                      )}
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#inquiry"
+                  className={`mt-8 inline-flex items-center justify-center px-6 py-2.5 text-xs tracking-widest uppercase rounded-sm transition-colors ${
+                    t.highlight
+                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                      : "border border-border hover:bg-cream"
+                  }`}
+                >
+                  Request quote
+                </a>
               </div>
             ))}
           </div>
-          <p className="text-center text-sm text-muted-foreground mt-10">
-            Need 1 000+ units or a multi-location rollout?{" "}
-            <a href="#inquiry" className="underline hover:text-foreground">
-              Get a custom quote
-            </a>
-            .
-          </p>
-          <p className="text-center text-xs text-muted-foreground/70 mt-3 italic">
-            Delivery costs included on orders of 250+ units. Smaller orders quoted at checkout.
+
+          <div className="grid md:grid-cols-2 gap-6 mt-10">
+            <div className="rounded-lg border border-border bg-background p-8 flex flex-col">
+              <span className="self-start text-[10px] tracking-[0.25em] uppercase px-2 py-0.5 rounded-sm bg-accent text-accent-foreground">
+                New
+              </span>
+              <h3 className="font-serif text-2xl mt-4">Monthly replenishment program</h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                Hooks get lost, stolen or damaged. Our subscription automatically replaces what you
+                need, every month.
+              </p>
+              <ul className="mt-5 space-y-2 text-sm text-foreground/80">
+                <li className="flex items-start gap-2">
+                  <Check className="h-4 w-4 text-accent mt-0.5 shrink-0" /> 12 units per month
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-4 w-4 text-accent mt-0.5 shrink-0" /> €18 per unit
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-4 w-4 text-accent mt-0.5 shrink-0" /> Cancel anytime
+                </li>
+              </ul>
+              <a
+                href="#inquiry"
+                className="mt-6 inline-flex self-start items-center px-6 py-2.5 bg-primary text-primary-foreground text-xs tracking-widest uppercase hover:bg-primary/90 transition-colors rounded-sm"
+              >
+                Start subscription
+              </a>
+            </div>
+
+            <div className="rounded-lg border border-border bg-background p-8 flex flex-col">
+              <span className="self-start text-[10px] tracking-[0.25em] uppercase px-2 py-0.5 rounded-sm bg-cream border border-border text-muted-foreground">
+                Custom
+              </span>
+              <h3 className="font-serif text-2xl mt-4">Multi-location rollout</h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                Rolling out across 10+ locations or building a private-label program? We'll create a
+                custom package with branded packaging, training, and a dedicated account manager.
+              </p>
+              <a
+                href="#inquiry"
+                className="mt-auto pt-6 inline-flex self-start items-center px-6 py-2.5 border border-border text-xs tracking-widest uppercase hover:bg-cream transition-colors rounded-sm"
+              >
+                Contact sales
+              </a>
+            </div>
+          </div>
+
+          <p className="text-center text-xs text-muted-foreground/80 mt-10 italic max-w-2xl mx-auto">
+            Delivery included on orders of 100+ units. All hooks are designed in Scandinavia and
+            ship from our EU warehouse within 10 business days.
           </p>
         </div>
       </section>
