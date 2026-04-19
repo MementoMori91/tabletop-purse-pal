@@ -25,7 +25,7 @@ export const Route = createFileRoute("/hospitality")({
 });
 
 const tiers = [
-  { qty: "50", price: "22", note: "Sample order" },
+  { qty: "50", price: "22", note: "Sample order", subnote: "Hooks only — no engraving" },
   { qty: "100", price: "18", note: "Most popular", highlight: true },
   { qty: "250", price: "15", note: "Group / chain" },
   { qty: "500+", price: "12", note: "Enterprise" },
@@ -195,6 +195,11 @@ function HospitalityPage() {
                 >
                   {t.note}
                 </p>
+                {t.subnote && (
+                  <p className="mt-2 text-[10px] normal-case tracking-normal text-muted-foreground/70 italic">
+                    {t.subnote}
+                  </p>
+                )}
               </div>
             ))}
           </div>
