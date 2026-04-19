@@ -134,6 +134,42 @@ function HospitalityPage() {
         </div>
       </section>
 
+      {/* How it works */}
+      <section id="how-it-works" className="bg-cream border-b border-border">
+        <div className="max-w-6xl mx-auto px-6 py-20">
+          <div className="text-center mb-14">
+            <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">How it works</p>
+            <h2 className="text-3xl md:text-4xl font-serif">From sample to service in three steps</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              {
+                step: "01",
+                title: "Request your sample",
+                body: "We send a hook engraved with your logo, free of charge.",
+              },
+              {
+                step: "02",
+                title: "Approve & order",
+                body: "Confirm the design and place your bulk order.",
+              },
+              {
+                step: "03",
+                title: "We deliver",
+                body: "Your branded hooks arrive bulk-packed, ready to place on tables.",
+              },
+            ].map(({ step, title, body }) => (
+              <div key={step} className="text-center md:text-left">
+                <p className="font-serif text-5xl text-accent mb-4">{step}</p>
+                <div className="h-px w-10 bg-border mb-4 mx-auto md:mx-0" />
+                <h3 className="font-serif text-xl mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why hospitality */}
       <section className="max-w-6xl mx-auto px-6 py-20">
         <div className="text-center mb-14">
