@@ -250,6 +250,9 @@ function HospitalityPage() {
             </a>
             .
           </p>
+          <p className="text-center text-xs text-muted-foreground/70 mt-3 italic">
+            Delivery costs included on orders of 250+ units. Smaller orders quoted at checkout.
+          </p>
         </div>
       </section>
 
