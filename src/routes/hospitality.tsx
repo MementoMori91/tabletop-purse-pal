@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
-import { Check, Mail, Phone, Building2, Sparkles, ShieldCheck, Truck } from "lucide-react";
+import { Check, Mail, Phone, Building2, Sparkles, ShieldCheck, Truck, Shield, Pen, RotateCcw, CreditCard } from "lucide-react";
 
 export const Route = createFileRoute("/hospitality")({
   component: HospitalityPage,
@@ -221,16 +221,17 @@ function HospitalityPage() {
           </div>
           <ul className="space-y-4">
             {[
-              "Free engraved sample with your logo",
-              "Brushed stainless steel finish",
-              "Laser-engraved venue branding",
-              "Bulk-pack delivery, EU-wide",
-              "Re-order portal for managers",
-              "Net-30 payment terms (qualifying venues)",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
+              { icon: Sparkles, text: "Free engraved sample with your logo" },
+              { icon: Shield, text: "Brushed stainless steel finish" },
+              { icon: Pen, text: "Laser-engraved venue branding" },
+              { icon: Truck, text: "Bulk-pack delivery, EU-wide" },
+              { icon: RotateCcw, text: "Re-order portal for managers" },
+              { icon: CreditCard, text: "Net-30 payment terms (qualifying venues)" },
+            ].map(({ icon: Icon, text }) => (
+              <li key={text} className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-accent mt-0.5 shrink-0" />
-                <span className="text-foreground">{item}</span>
+                <Icon className="h-5 w-5 text-muted-foreground mt-0.5 shrink-0" />
+                <span className="text-foreground">{text}</span>
               </li>
             ))}
           </ul>
