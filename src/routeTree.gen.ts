@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as JournalRouteImport } from './routes/journal'
+import { Route as HospitalityRouteImport } from './routes/hospitality'
 import { Route as GiftRouteImport } from './routes/gift'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -19,6 +20,11 @@ import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
 const JournalRoute = JournalRouteImport.update({
   id: '/journal',
   path: '/journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HospitalityRoute = HospitalityRouteImport.update({
+  id: '/hospitality',
+  path: '/hospitality',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GiftRoute = GiftRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gift': typeof GiftRoute
+  '/hospitality': typeof HospitalityRoute
   '/journal': typeof JournalRouteWithChildren
   '/journal/$slug': typeof JournalSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gift': typeof GiftRoute
+  '/hospitality': typeof HospitalityRoute
   '/journal': typeof JournalRouteWithChildren
   '/journal/$slug': typeof JournalSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gift': typeof GiftRoute
+  '/hospitality': typeof HospitalityRoute
   '/journal': typeof JournalRouteWithChildren
   '/journal/$slug': typeof JournalSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -78,6 +87,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/gift'
+    | '/hospitality'
     | '/journal'
     | '/journal/$slug'
     | '/product/$handle'
@@ -86,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/gift'
+    | '/hospitality'
     | '/journal'
     | '/journal/$slug'
     | '/product/$handle'
@@ -94,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/gift'
+    | '/hospitality'
     | '/journal'
     | '/journal/$slug'
     | '/product/$handle'
@@ -103,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   GiftRoute: typeof GiftRoute
+  HospitalityRoute: typeof HospitalityRoute
   JournalRoute: typeof JournalRouteWithChildren
   ProductHandleRoute: typeof ProductHandleRoute
 }
@@ -114,6 +127,13 @@ declare module '@tanstack/react-router' {
       path: '/journal'
       fullPath: '/journal'
       preLoaderRoute: typeof JournalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hospitality': {
+      id: '/hospitality'
+      path: '/hospitality'
+      fullPath: '/hospitality'
+      preLoaderRoute: typeof HospitalityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gift': {
@@ -169,6 +189,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   GiftRoute: GiftRoute,
+  HospitalityRoute: HospitalityRoute,
   JournalRoute: JournalRouteWithChildren,
   ProductHandleRoute: ProductHandleRoute,
 }
