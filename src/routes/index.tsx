@@ -4,6 +4,11 @@ import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { HeroSection } from "@/components/HeroSection";
 import { USPStrip } from "@/components/USPStrip";
 import { ProductGrid } from "@/components/ProductGrid";
+import { Reviews } from "@/components/Reviews";
+import { HowItWorks } from "@/components/HowItWorks";
+import { GiftSection } from "@/components/GiftSection";
+import { AsWorn } from "@/components/AsWorn";
+import { WhyHangr } from "@/components/WhyHangr";
 import { FounderStory } from "@/components/FounderStory";
 import { StoreFooter } from "@/components/StoreFooter";
 
@@ -27,6 +32,11 @@ function Index() {
       <HeroSection />
       <USPStrip />
       <ProductGrid />
+      <Reviews />
+      <HowItWorks />
+      <GiftSection />
+      <AsWorn />
+      <WhyHangr />
       <FounderStory />
       <StoreFooter />
     </>
