@@ -117,7 +117,7 @@ function ProductDetailPage() {
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl md:text-4xl font-serif text-foreground">{product.title}</h1>
             <p className="mt-4 text-2xl text-foreground">
-              {variant?.price.currencyCode} {parseFloat(variant?.price.amount || "0").toFixed(2)}
+              €{parseFloat(variant?.price.amount || "0").toFixed(0)}
             </p>
             <p className="mt-6 text-muted-foreground leading-relaxed">{product.description}</p>
 

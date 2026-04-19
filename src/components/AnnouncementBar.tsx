@@ -1,9 +1,11 @@
 const messages = [
-  "Free shipping on orders over €120",
+  "Free shipping on orders over €75",
   "Designed in Scandinavia",
   "Folds flat — fits any clutch",
   "30-day returns",
 ];
+
+export const FREE_SHIPPING_THRESHOLD = 75;
 
 export function AnnouncementBar() {
   return (

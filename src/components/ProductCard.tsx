@@ -57,7 +57,7 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
       <div className="mt-4 text-center">
         <h3 className="font-serif text-lg text-foreground">{node.title}</h3>
         <p className="mt-1 text-sm text-muted-foreground">
-          {price.currencyCode} {parseFloat(price.amount).toFixed(2)}
+          €{parseFloat(price.amount).toFixed(0)}
         </p>
       </div>
     </Link>
