@@ -436,7 +436,7 @@ function HospitalityPage() {
       </section>
 
       {/* Inquiry form */}
-      <section id="inquiry" className="bg-cream border-t border-border">
+      <section id="inquiry" className="bg-cream border-t border-border scroll-mt-20">
         <div className="max-w-3xl mx-auto px-6 py-20">
           <div className="text-center mb-10">
             <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Get started</p>
