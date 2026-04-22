@@ -102,27 +102,30 @@ function HospitalityPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Minimal B2B header */}
-      <header className="border-b border-border">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
           <Link to="/hospitality" className="flex flex-col leading-none">
             <span className="font-serif text-xl tracking-wide">Hängr</span>
             <span className="text-[10px] tracking-[0.3em] uppercase text-accent mt-0.5">
               Hospitality
             </span>
           </Link>
-          <nav className="flex items-center gap-6 text-xs tracking-[0.2em] uppercase text-muted-foreground">
+          <nav className="flex items-center gap-4 sm:gap-6 text-xs tracking-[0.2em] uppercase text-muted-foreground">
             <a href="#how-it-works" className="hover:text-foreground transition-colors hidden sm:inline">
               How it works
             </a>
             <a href="#pricing" className="hover:text-foreground transition-colors hidden sm:inline">
               Pricing
             </a>
-            <a href="#inquiry" className="hover:text-foreground transition-colors hidden sm:inline">
-              Sample
-            </a>
-            <Link to="/" className="hover:text-foreground transition-colors">
+            <Link to="/" className="hover:text-foreground transition-colors hidden md:inline">
               Consumer site
             </Link>
+            <a
+              href="#inquiry"
+              className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground text-[11px] tracking-[0.2em] uppercase hover:bg-primary/90 transition-colors rounded-sm"
+            >
+              Request sample
+            </a>
           </nav>
         </div>
       </header>
