@@ -180,7 +180,7 @@ function HospitalityPage() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="bg-cream border-b border-border">
+      <section id="how-it-works" className="bg-cream border-b border-border scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6 py-20">
           <div className="text-center mb-14">
             <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">How it works</p>
@@ -249,7 +249,7 @@ function HospitalityPage() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="bg-cream border-y border-border">
+      <section id="pricing" className="bg-cream border-y border-border scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6 py-20">
           <div className="text-center mb-14">
             <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Volume pricing</p>
