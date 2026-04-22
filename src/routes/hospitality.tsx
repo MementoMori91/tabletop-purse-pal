@@ -464,6 +464,18 @@ function HospitalityPage() {
             />
             <div>
               <label className="block text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2">
+                Logo file (optional)
+              </label>
+              <input
+                type="file"
+                name="logo"
+                accept=".svg,.png,.ai,image/svg+xml,image/png,application/postscript,application/illustrator"
+                className="block w-full text-sm text-foreground file:mr-4 file:py-2.5 file:px-4 file:rounded-sm file:border file:border-border file:bg-cream file:text-xs file:tracking-[0.2em] file:uppercase file:text-foreground hover:file:bg-background file:cursor-pointer cursor-pointer border border-border rounded-sm bg-background focus:outline-none focus:border-foreground transition-colors"
+              />
+              <p className="mt-2 text-xs text-muted-foreground">SVG, PNG or AI format accepted</p>
+            </div>
+            <div>
+              <label className="block text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2">
                 Message (optional)
               </label>
               <textarea
