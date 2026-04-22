@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { Check, Mail, Phone, Building2, Sparkles, ShieldCheck, Truck, Shield, Pen, RotateCcw, CreditCard } from "lucide-react";
@@ -73,6 +73,14 @@ const inquirySchema = z.object({
 
 function HospitalityPage() {
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    const prev = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = "smooth";
+    return () => {
+      document.documentElement.style.scrollBehavior = prev;
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
