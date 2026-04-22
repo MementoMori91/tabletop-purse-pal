@@ -139,7 +139,7 @@ function HospitalityPage() {
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-lg leading-relaxed">
               Discreet, engraved bag hooks for fine-dining venues. Custom-branded with your logo,
-              delivered in bulk from €12 per unit.
+              delivered in bulk from €13 per unit.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
