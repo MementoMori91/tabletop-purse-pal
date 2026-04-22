@@ -399,7 +399,7 @@ function HospitalityPage() {
             <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">FAQ</p>
             <h2 className="text-3xl md:text-4xl font-serif">Common questions</h2>
           </div>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
             {[
               {
                 q: "What format do I need for my logo?",
