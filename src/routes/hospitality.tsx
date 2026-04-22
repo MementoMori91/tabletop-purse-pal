@@ -100,7 +100,7 @@ function HospitalityPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground scroll-smooth">
       {/* Minimal B2B header */}
       <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
