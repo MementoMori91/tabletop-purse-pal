@@ -315,8 +315,8 @@ function HospitalityPage() {
               </span>
               <h3 className="font-serif text-2xl mt-4">Monthly replenishment program</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                Hooks get lost, stolen or damaged. Our subscription automatically replaces what you
-                need, every month.
+                Never run out of branded hooks. Our monthly replenishment program keeps every table
+                stocked, automatically.
               </p>
               <ul className="mt-5 space-y-2 text-sm text-foreground/80">
                 <li className="flex items-start gap-2">
