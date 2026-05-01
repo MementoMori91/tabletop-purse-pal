@@ -119,7 +119,24 @@ function ProductDetailPage() {
             <p className="mt-4 text-2xl text-foreground">
               €{parseFloat(variant?.price.amount || "0").toFixed(0)}
             </p>
-            <p className="mt-6 text-muted-foreground leading-relaxed">{product.description}</p>
+            <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Meet the <span className="text-foreground">{product.title}</span> — a quietly luxurious bag holder
+                designed to keep your favourite handbag off the floor, wherever the day takes you.
+              </p>
+              <p>
+                Drawn in Sweden and crafted from solid, weighted metal, its considered design
+                evenly distributes the load so even structured leather totes sit safely. When
+                you're done, it folds flat to slip into the smallest of bags.
+              </p>
+              <p>
+                Carry your most-loved pieces with confidence — knowing they'll stay pristine,
+                wherever you are.
+              </p>
+              {product.description && (
+                <p className="pt-2 border-t border-border/60 text-sm">{product.description}</p>
+              )}
+            </div>
 
             {product.options.length > 0 && product.options[0].name !== "Title" && (
               <div className="mt-8 space-y-4">
