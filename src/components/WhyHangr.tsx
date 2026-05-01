@@ -4,27 +4,27 @@ const reasons = [
   {
     icon: Mountain,
     title: "Designed in Scandinavia",
-    body: "Shaped by Nordic simplicity and restraint",
+    body: "Drawn in a Stockholm studio and shaped by Nordic restraint. Every curve, weight and finish is considered, so Hängr feels as quiet on your table as it does in your hand.",
   },
   {
     icon: Scale,
     title: "Holds up to 15 kg",
-    body: "Strong enough for your heaviest everyday bag",
+    body: "Engineered from solid weighted metal to support even the heaviest everyday bag. Tested on structured leather totes and overpacked weekenders so yours never touches the floor.",
   },
   {
     icon: Gem,
     title: "Premium finish",
-    body: "Brushed gold, polished steel, hand-selected stones",
+    body: "Brushed gold, polished steel and hand-selected stones, set by hand. Materials are chosen to age beautifully and keep their shine through years of daily use.",
   },
   {
     icon: Package,
     title: "Gift-ready packaging",
-    body: "Every order arrives beautifully boxed",
+    body: "Each Hängr arrives in a soft-touch box with a linen pouch tucked inside. Ready to give straight from the parcel — no extra wrapping, no last-minute shopping.",
   },
   {
     icon: RefreshCw,
     title: "30-day returns",
-    body: "Buy with complete confidence",
+    body: "Try it at your favourite café, restaurant or desk. If it isn't right, send it back within 30 days for a full refund — no forms, no questions, no fuss.",
   },
 ];
 
