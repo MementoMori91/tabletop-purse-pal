@@ -199,8 +199,8 @@ function ProductDetailPage() {
               Designed for the bags you love most
             </h2>
             <p className="mt-4 text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              We're handbag people too. After years of searching for a portable hanger that
-              actually felt worthy of a fine bag, we drew our own — quietly engineered, beautifully made.
+              We're handbag people, too. After years of hunting for a portable hanger worthy of a
+              fine bag, we drew our own — quietly engineered in Sweden, beautifully made.
             </p>
           </div>
 
