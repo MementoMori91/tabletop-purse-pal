@@ -4,7 +4,7 @@ import { storefrontApiRequest, STOREFRONT_PRODUCT_BY_HANDLE_QUERY, type ShopifyP
 import { useCartStore } from "@/stores/cartStore";
 import { StoreHeader } from "@/components/StoreHeader";
 import { StoreFooter } from "@/components/StoreFooter";
-import { ShoppingBag, Loader2, ArrowLeft } from "lucide-react";
+import { ShoppingBag, Loader2, ArrowLeft, Layers, ShieldCheck, MoveHorizontal, Lock } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/product/$handle")({
