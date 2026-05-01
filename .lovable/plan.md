@@ -1,18 +1,22 @@
 ## Goal
-Replace the body copy of the four feature cards in the "Designed for the bags you love most" section on `/product/$handle` with new, distinctly Hängr-voiced text supplied by the user.
+Update only the intro paragraph above the four feature blocks in the "Wherever you go" section on `/product/$handle`.
 
-## Scope
-File: `src/routes/product.$handle.tsx` — only the four `<p class="text-xs text-muted-foreground leading-relaxed">` blocks inside the `grid md:grid-cols-[1fr_auto_1fr]` layout.
+## Change
+File: `src/routes/product.$handle.tsx`
+
+Replace the existing intro paragraph:
+
+> We're handbag people too. After years of searching for a portable hanger that actually felt worthy of a fine bag, we drew our own — quietly engineered, beautifully made.
+
+With:
+
+> We're handbag people, too. After years of hunting for a portable hanger worthy of a fine bag, we drew our own — quietly engineered in Sweden, beautifully made.
 
 ## Preserved (no changes)
-- Section heading, intro paragraph, eyebrow ("Wherever you go")
-- Icons: `Layers`, `ShieldCheck`, `Lock`, `MoveHorizontal`
-- Feature titles: "Works on any surface", "Tested on designer bags", "Anti-slip protection", "Foldable & stylish"
-- 4-up grid layout with centered product image
-- Specifications & Measurements block beneath
-
-## Awaiting from user
-The four replacement paragraphs (one per feature). Once received, I'll drop them in verbatim with no other edits.
+- Eyebrow ("Wherever you go") and section heading ("Designed for the bags you love most")
+- The four feature blocks (icons, titles, body copy) — to be revisited once full new copy is supplied
+- Specifications & Measurements block
+- Product description above
 
 ## Out of scope
-Specifications/Measurements list, product description above, WhyHangr, hospitality page.
+Rewriting the four feature paragraphs — those texts came through as fragments and need to be resent intact before they can be applied.
